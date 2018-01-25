@@ -12,5 +12,6 @@
 */
 
 $router->get('/', function () use ($router) {
-    return $router->app->version();
+    include('index.html');
+    return;
 });
