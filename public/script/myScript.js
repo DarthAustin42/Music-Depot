@@ -6,8 +6,8 @@ function moveLogin() {
 }
 
 function checkLogin() {
-	if($("#navbarDropdownMenuLink").text() != "Login/Sign Up") {
-		console.log($("#navbarDropdownMenuLink").text() + ":::Login/Sign Up");
+	if($.trim($("#navbarDropdownMenuLink").text()) != "Login/Sign Up") {
+		console.log($.trim($("#navbarDropdownMenuLink").text()) + ":::Login/Sign Up");
 		$("#toLogin").css("visibility", "hidden");
 	}
 }
