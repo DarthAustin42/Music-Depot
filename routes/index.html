@@ -32,7 +32,15 @@
 		    	</ul>
 		    	<ul class="navbar-nav navbar-toggler-right" id="loginNavID">
 		    		<li class="nav-item dropdown dropdown-pull-right">
-				       	<a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Temp</a>
+				       	<a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				       		<?php
+								if(isset($_SESSION["username"])) {
+							    	echo "<p>" . $_SESSION["username"] . "</p>";
+							    } else {
+							    	echo "<p>Login/Sign Up</p>";
+							    }
+							?>
+				       	</a>
 				        <div class="dropdown-menu loginOuterContainer" aria-labelledby="navbarDropdownMenuLink">
 				        	<div class="loginContainer">
 			              		<form action="addUser.php" method="post">
