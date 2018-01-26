@@ -6,7 +6,7 @@ function moveLogin() {
 }
 
 function checkLogin() {
-	if($("#toLogin").text() != "Login/Sign Up") {
+	if($("#navbarDropdownMenuLink").text() != "Login/Sign Up") {
 		console.log($("#toLogin").text() + ":::Login/Sign Up");
 		$("#toLogin").css("visibility", "hidden");
 	}
