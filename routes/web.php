@@ -12,6 +12,7 @@
 */
 
 $router->get('/', function () use ($router) {
+	$results =  DB::select("SELECT * FROM testTable");
     echo("hi THERE");
     include('index.html');
     return ;
