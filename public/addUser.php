@@ -17,7 +17,7 @@
 
 	// Create database
 	//$sql = "INSERT INTO users VALUES ('$USERNAME', '$PASSWORD')";
-	$sql = "SELECT username FROM users";
+	$sql = "SELECT * FROM users WHERE username='$USERNAME'";
 	if ($conn->query($sql) === TRUE) {
 		$allUsers = $conn->query($sql);
 		//echo $allUsers;
