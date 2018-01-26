@@ -15,24 +15,18 @@ $router->get('/', function () use ($router) {
 	$servername = "localhost";
 	$username = "anielsen";
 	$password = "VikingS42";
-
+	$dbname = 'testDB';
 	// Create connection
-	$conn = new mysqli($servername, $username, $password);
+	$conn = new mysqli($servername, $username, $password, $dbname);
 	// Check connection
 	if ($conn->connect_error) {
 	    die("Connection failed: " . $conn->connect_error);
 	} 
 
 	// Create database
-	$sql = "USE testDB;";
+	$sql = "INSERT INTO testTable VALUES ('bhoffman')";
 	if ($conn->query($sql) === TRUE) {
-		$sql = "SELECT * FROM testTable;";
-		if($conn->query($sql) === TRUE) {
-		    echo $conn->query($sql);
-		}
-		else {
-			echo "Error creating database1: " . $conn->error;
-		}
+		echo "New record created successfully";
 	} else {
 	    echo "Error creating database2: " . $conn->error;
 	}
