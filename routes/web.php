@@ -23,7 +23,7 @@ if($conn->connect_error) {
 
 $router->get('/', function () use ($router) {
 	$sql = "SELECT * FROM testTable";
-	$results = $conn->query($sql);
+	//$results = $conn->query($sql);
     echo("hi THERE");
     include('index.html');
     return ;
