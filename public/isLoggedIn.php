@@ -1,10 +1,9 @@
 <?php
 	session_start();
 
-	echo "hi, " . $_SESSION["username"];
-	// if(isset($_SESSION["username"])) {
- //    	return $_SESSION["username"];
- //    } else {
- //    	return "Login/Sign Up";
- //    }
+	if(isset($_SESSION["username"])) {
+    	echo $_SESSION["username"];
+    } else {
+    	echo "Login/Sign Up";
+    }
 ?>
