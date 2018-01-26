@@ -17,9 +17,11 @@
 
 	// Create database
 	//$sql = "INSERT INTO users VALUES ('$USERNAME', '$PASSWORD')";
-	$sql = 'SELECT * FROM users WHERE username=$_POST["username"] AND password=$_POST["password"];'
+	$sql = "SELECT * FROM users"
 	if ($conn->query($sql) === TRUE) {
-		$_SESSION['username'] = $_POST["username"];
+		$allUsers = $conn->query($sql);
+		echo $allUsers;
+		//$_SESSION['username'] = $_POST["username"];
 		echo "Hello, " . $_POST["username"];
 		//header("LOCATION: /index.php");
 	} else {
