@@ -4,7 +4,7 @@ function moveLogin() {
 		$("#loginNavID").removeClass("navbar-toggler-right");
 	}
 
-	if($("#toLogin").text() != "Login/Sign Up") {
+	if($("#toLogin").value() != "Login/Sign Up") {
 		console.log($("#toLogin").text() + ":::Login/Sign Up");
 		$("#toLogin").css("visibility", "hidden");
 	}
