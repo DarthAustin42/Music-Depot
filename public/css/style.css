@@ -4,8 +4,3 @@
 	width: 300px;
 	height: 200px;
 }
-.dropdown-pull-right {
-	float: right !important;
-	right: 0;
-	left: auto;
-}
