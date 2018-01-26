@@ -12,8 +12,8 @@
 */
 
 $router->get('/', function () use ($router) {
+	session_start();
     include('index.html');
-    session_start();
     if(isset($_SESSION['username'])) {
     	echo "Hello, " . $_POST["username"];
     } else {
