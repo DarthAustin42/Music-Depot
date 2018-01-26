@@ -10,8 +10,8 @@
 	//     die("Connection failed: " . $conn->connect_error);
 	// } 
 
-	echo $_POST['username'];
-	echo $_POST['password'];
+	echo "SOMETHING: " . $_POST['username'];
+	echo "SOMETHING: " . $_POST['password'];
 	// Create database
 	// $sql = "INSERT INTO users VALUES ($_POST['username'], $_POST['password'])";
 	// if ($conn->query($sql) === TRUE) {
