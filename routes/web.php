@@ -13,6 +13,7 @@
 
 $router->get('/', function () use ($router) {
 	session_start();
+	echo $_SESSION["username"];
     include('index.html');
     if(isset($_SESSION['username'])) {
     	echo "Hello, " . $_POST["username"];
