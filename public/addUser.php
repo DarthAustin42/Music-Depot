@@ -20,7 +20,7 @@
 	$sql = "SELECT * FROM users"
 	if ($conn->query($sql) === TRUE) {
 		$allUsers = $conn->query($sql);
-		echo $allUsers;
+		//echo $allUsers;
 		//$_SESSION['username'] = $_POST["username"];
 		echo "Hello, " . $_POST["username"];
 		//header("LOCATION: /index.php");
