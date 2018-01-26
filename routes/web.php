@@ -26,7 +26,7 @@ $router->get('/', function () use ($router) {
 	// Create database
 	$sql = "USE testDB;";
 	if ($conn->query($sql) === TRUE) {
-		$sql = "SELECT * FROM testTable";
+		$sql = "SELECT * FROM testTable;";
 		if($conn->query($sql) === TRUE) {
 		    echo $conn->query($sql);
 		}
@@ -38,7 +38,7 @@ $router->get('/', function () use ($router) {
 	}
 
 	$conn->close();
-	
+
     include('index.html');
     return ;
 });
