@@ -17,7 +17,7 @@ $router->get('/', function () use ($router) {
     if(isset($_SESSION['username'])) {
     	echo "Hello, " . $_POST["username"];
     } else {
-    	echo "No";
+    	echo "Hi, " . $_SESSION['username'];
     }
     return ;
 });
