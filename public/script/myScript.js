@@ -1,7 +1,7 @@
 $(window).resize(function() {
 	var viewportWidth = $(window).width();
 	console.log(viewportWidth);
-	if (viewportWidth < 600) {
+	if (viewport.is('<=md')) {
 		$("#loginNavID").removeClass("navbar-toggler-right");
 	}
 });
