@@ -10,13 +10,14 @@
 	left: auto;
 }
 .dropdown-pull-right>.dropdown-menu {
-	float: right;
 	right: 0;
 	left: auto;
 }
 .loginNav {
+	width: 320px;
+}
+#navbarDropdownMenuLink {
 	float: right;
 	right: 0;
 	left: auto;
-	width: 320px;
 }
