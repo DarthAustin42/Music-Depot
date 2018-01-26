@@ -18,7 +18,7 @@
 	// Create database
 	$sql = "INSERT INTO users VALUES ('$USERNAME', '$PASSWORD')";
 	if ($conn->query($sql) === TRUE) {
-		echo "New record created successfully";
+		header("LOCATION: /index.php");
 	} else {
 	    echo "Error creating database2: " . $conn->error;
 	}
