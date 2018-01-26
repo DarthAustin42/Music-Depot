@@ -23,8 +23,9 @@
 		while($row = mysqli_fetch_array($allUsers)) {
 			if($row['username'] === $USERNAME && $row['password'] === $PASSWORD) {
 				$_SESSION['username'] = $_POST["username"];
-				echo "Hello there, " . $_SESSION['username'];
-				$foundUser = true;
+				header("LOCATION: /index.php");
+				// echo "Hello there, " . $_SESSION['username'];
+				// $foundUser = true;
 				break;
 			}
 		}
