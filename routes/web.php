@@ -10,23 +10,35 @@
 | and give it the Closure to call when that URI is requested.
 |
 */
-$servername = 'localhost';
-$username = 'anielsen';
-$password = 'VikingS42';
-$dbname = 'testDB';
-
-$conn = new mysql_connect($servername, $username, $password);
-
-if($conn->connect_error) {
-	die("Connection failed: " . $conn->connect_error);
-}
 
 $router->get('/', function () use ($router) {
-	$sql = "USE testDB";
-	$conn->query($sql);
-	$sql = "SELECT * FROM testTable";
-	$results = $conn->query($sql);
-    echo("hi THERE");
+	$servername = "localhost";
+	$username = "anielsen";
+	$password = "VikingS42";
+
+	// Create connection
+	$conn = new mysqli($servername, $username, $password);
+	// Check connection
+	if ($conn->connect_error) {
+	    die("Connection failed: " . $conn->connect_error);
+	} 
+
+	// Create database
+	$sql = "USE testDB;";
+	if ($conn->query($sql) === TRUE) {
+		$sql = "SELECT * FROM testTable";
+		if($conn->query($sql) === TRUE) {
+		    echo $conn->query($sql);
+		}
+		else {
+			echo "Error creating database1: " . $conn->error;
+		}
+	} else {
+	    echo "Error creating database2: " . $conn->error;
+	}
+
+	$conn->close();
+	
     include('index.html');
     return ;
 });
