@@ -5,7 +5,7 @@ function moveLogin() {
 	}
 
 	if($("#toLogin").text() != "Login/Sign Up") {
-		$("#toLogin").addClass("hidden");
+		$("#toLogin").css("visibility", "hidden");
 	}
 }
 
