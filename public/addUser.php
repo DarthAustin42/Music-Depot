@@ -18,6 +18,7 @@
 	// Create database
 	$sql = "INSERT INTO users VALUES ('$USERNAME', '$PASSWORD')";
 	if ($conn->query($sql) === TRUE) {
+		$_SESSION['username'] = $_POST["username"];
 		header("LOCATION: /index.php");
 	} else {
 	    echo "Error creating database2: " . $conn->error;
