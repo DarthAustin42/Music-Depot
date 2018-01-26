@@ -10,13 +10,15 @@
 	    die("Connection failed: " . $conn->connect_error);
 	} 
 
+	echo $_POST['username'];
+	echo $_POST['password'];
 	// Create database
-	$sql = "INSERT INTO users VALUES ($_POST['username'], $_POST['password'])";
-	if ($conn->query($sql) === TRUE) {
-		echo "New record created successfully";
-	} else {
-	    echo "Error creating database2: " . $conn->error;
-	}
+	// $sql = "INSERT INTO users VALUES ($_POST['username'], $_POST['password'])";
+	// if ($conn->query($sql) === TRUE) {
+	// 	echo "New record created successfully";
+	// } else {
+	//     echo "Error creating database2: " . $conn->error;
+	// }
 
 	$conn->close();
 ?>
