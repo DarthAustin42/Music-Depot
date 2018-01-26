@@ -4,8 +4,8 @@ function moveLogin() {
 		$("#loginNavID").removeClass("navbar-toggler-right");
 	}
 
-	if($("#navbarDropdownMenuLink").text() != "Login/Sign Up") {
-		$("#navbarDropdownMenuLink").addClass("hidden");
+	if($("#toLogin").text() != "Login/Sign Up") {
+		$("#toLogin").addClass("hidden");
 	}
 }
 
