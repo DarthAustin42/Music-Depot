@@ -15,15 +15,17 @@ $username = 'anielsen';
 $password = 'VikingS42';
 $dbname = 'testDB';
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysql_connect($servername, $username, $password);
 
 if($conn->connect_error) {
 	die("Connection failed: " . $conn->connect_error);
 }
 
 $router->get('/', function () use ($router) {
+	$sql = "USE testDB";
+	$conn->query($sql);
 	$sql = "SELECT * FROM testTable";
-	//$results = $conn->query($sql);
+	$results = $conn->query($sql);
     echo("hi THERE");
     include('index.html');
     return ;
