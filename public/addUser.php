@@ -17,17 +17,31 @@
 
 	// Create database
 	//$sql = "INSERT INTO users VALUES ('$USERNAME', '$PASSWORD')";
-	$sql = "SELECT * FROM users WHERE username='$USERNAME'";
-	if ($conn->query($sql) === TRUE) {
-		$allUsers = $conn->query($sql);
+	$sql = "SELECT * FROM users";
+	if ($allUsers = mysqli_query($conn, $sql)) {
+		echo "<table>";
+			echo "<tr>";
+				echo "<th>id</th>";
+				echo "<th>username</th>";
+				echo "<th>password</th>";
+			echo "</tr>";
+		while($row = mysqli_fetch_array($allUsers)) {
+			echo "<tr>";
+				echo "<td>" . $row['username'] . "</td>";
+				echo "<td>" . $row['password'] . "</td>";
+			echo "</tr>";
+		}
+		echo "</table>";
+
+		mysqli_free_result($allUsers);
 		//echo $allUsers;
 		//$_SESSION['username'] = $_POST["username"];
 		echo "Hello, " . $_POST["username"];
 		//header("LOCATION: /index.php");
 	} else {
-	    echo "Error creating database2: " . $conn->error;
+	    echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
 	}
 
-	$conn->close();
+	mysqli_close($conn);
 	return;
 ?>
