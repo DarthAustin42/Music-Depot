@@ -16,3 +16,8 @@
 .loginNav {
 	width: 320px;
 }
+.loginNavDiv {
+	float: right;
+	right: 0px;
+	left: auto;
+}
