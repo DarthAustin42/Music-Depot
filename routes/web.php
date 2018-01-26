@@ -10,9 +10,20 @@
 | and give it the Closure to call when that URI is requested.
 |
 */
+$servername = 'localhost';
+$username = 'anielsen';
+$password = 'VikingS42';
+$dbname = 'testDB';
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if($conn->connect_error) {
+	die("Connection failed: " . $conn->connect_error);
+}
 
 $router->get('/', function () use ($router) {
-	$results =  DB::select("SELECT * FROM testTable");
+	$sql = "SELECT * FROM testTable";
+	$results = $conn->query($sql);
     echo("hi THERE");
     include('index.html');
     return ;
