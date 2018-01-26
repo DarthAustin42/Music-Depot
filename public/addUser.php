@@ -1,5 +1,7 @@
 <?php
 	echo "hi";
+	echo "Username: " . $_POST["username"];
+	echo "Password: " . $_POST["password"];
 	$app = require __DIR__.'/../bootstrap/app.php';
 	$app->post('addUser', function (Illuminate\Http\Request $request) {
 		$USERNAME = $request->input('username');
