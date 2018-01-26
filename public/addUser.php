@@ -22,7 +22,8 @@
 		$foundUser = false;
 		while($row = mysqli_fetch_array($allUsers)) {
 			if($row['username'] === $USERNAME && $row['password'] === $PASSWORD) {
-				echo "Hello, " . $_POST["username"];
+				$_SESSION['username'] = $_POST["username"];
+				echo "Hello there, " . $_SESSION['username']
 				$foundUser = true;
 				break;
 			}
