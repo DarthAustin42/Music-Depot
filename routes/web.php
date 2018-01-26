@@ -12,8 +12,7 @@
 */
 
 $router->get('/', function () use ($router) {
-    $users = app('testDB')->select("SELECT * FROM testTable");
     echo("hi THERE");
     include('index.html');
-    return "hello: " . $users;
+    return ;
 });
