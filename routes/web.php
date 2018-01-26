@@ -13,8 +13,8 @@
 
 $router->get('/', function () use ($router) {
     include('index.html');
-    $USERNAME = $request->input('username');
-	$PASSWORD = $request->input('password');
+    $USERNAME = $_POST["username"];
+	$PASSWORD =  $_POST["password"];
 
 
 	$servername = "localhost";
