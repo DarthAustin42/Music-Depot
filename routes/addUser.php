@@ -1,4 +1,5 @@
 <?php
+	echo "hi";
 	$app->post('addUser', function (Illuminate\Http\Request $request) {
 		$USERNAME = $request->input('username');
 		$PASSWORD = $request->input('password');
