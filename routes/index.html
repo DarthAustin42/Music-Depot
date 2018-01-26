@@ -35,27 +35,26 @@
 				       	<a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				       		<?php
 								if(isset($_SESSION["username"])) {
-							    	echo "<p>" . $_SESSION["username"] . "</p>";
+							    	echo $_SESSION["username"] . "</a>";
 							    } else {
-							    	echo "<p>Login/Sign Up</p>";
+							    	echo "Login/Sign Up</a>
+										    	<div class="dropdown-menu loginOuterContainer" aria-labelledby="navbarDropdownMenuLink">
+							        	<div class="loginContainer">
+						              		<form action="addUser.php" method="post">
+						              			<div class="form-group">
+						                			<input name="username" id="username" name="username" class="form-control" type="text" placeholder="Username"> 
+						                		</div>
+						                		<div class="form-group">
+						                			<input name="password" id="password" name="password" class="form-control" type="password" placeholder="Password"><br>
+						                		</div>
+						                		<div class="form-group">
+						                			<input type="submit" class="form-control">
+						                		</div>
+						              		</form>
+						              	</div>
+							        </div>";
 							    }
 							?>
-				       	</a>
-				        <div class="dropdown-menu loginOuterContainer" aria-labelledby="navbarDropdownMenuLink">
-				        	<div class="loginContainer">
-			              		<form action="addUser.php" method="post">
-			              			<div class="form-group">
-			                			<input name="username" id="username" name="username" class="form-control" type="text" placeholder="Username"> 
-			                		</div>
-			                		<div class="form-group">
-			                			<input name="password" id="password" name="password" class="form-control" type="password" placeholder="Password"><br>
-			                		</div>
-			                		<div class="form-group">
-			                			<input type="submit" class="form-control">
-			                		</div>
-			              		</form>
-			              	</div>
-				        </div>
 			      	</li>
 		    	</ul>
     		</div>
