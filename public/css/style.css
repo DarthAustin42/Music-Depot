@@ -14,5 +14,8 @@
 	left: auto;
 }
 .loginNav {
+	float: right;
+	right: 0;
+	left: auto;
 	width: 320px;
 }
