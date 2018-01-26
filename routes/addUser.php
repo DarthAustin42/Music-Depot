@@ -1,7 +1,7 @@
-<html>
-<body>
-	Welcome <?php echo $request->input('username'); ?><br>
-	Your password is: <?php echo $request->input('password'); ?>
-</body>
-</html>
-
+<?php
+	$app->post('addUser', function (Illuminate\Http\Request $request) {
+		$USERNAME = $request->input('username');
+		$PASSWORD = $request->input('password');
+		echo $USERNAME . $PASSWORD;
+	})
+?>
