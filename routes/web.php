@@ -14,6 +14,6 @@
 $router->get('/', function () use ($router) {
     include('index.html');
     $users = DB::select('select * from testTable', [1]);
-    echo($users);
+    echo("hello: " . $users);
     return;
 });
