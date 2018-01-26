@@ -10,6 +10,7 @@
 	left: auto;
 }
 .dropdown-pull-right>.dropdown-menu {
+	float: right;
 	right: 0;
 	left: auto;
 }
