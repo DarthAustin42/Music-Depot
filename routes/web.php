@@ -12,6 +12,7 @@
 */
 
 $router->get('/', function () use ($router) {
+	session_destroy();
 	session_start();
 	echo $_SESSION["username"];
     include('index.html');
