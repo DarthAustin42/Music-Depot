@@ -33,9 +33,15 @@
 				        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 				        	<div class="loginContainer">
 			              		<form action="addUser.php" method="post">
-			                			Username: <input name="username" type="text" placeholder="Username"> 
-			                			Password: <input name="password" type="password" placeholder="Password"><br>
-			                			<input type="submit">
+			              			<div class="form-group">
+			                			<input name="username" id="username" name="username" class="form-control" type="text" placeholder="Username"> 
+			                		</div>
+			                		<div class="form-group">
+			                			<input name="password" id="password" name="password" class="form-control" type="password" placeholder="Password"><br>
+			                		</div>
+			                		<div class="form-group">
+			                			<input type="submit" class="form-control">
+			                		</div>
 			              		</form>
 			              	</div>
 				        </div>
