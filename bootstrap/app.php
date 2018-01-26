@@ -96,7 +96,6 @@ $app->singleton(
 $app->router->group([
     'namespace' => 'App\Http\Controllers',
 ], function ($router) {
-	session_start();
     require __DIR__.'/../routes/web.php';
 });
 
