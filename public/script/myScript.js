@@ -19,7 +19,7 @@ $(window).resize(function() {
 	}
 });
 
-checkPass() {
+function checkPass() {
   var passA = $('input[name=newPassword]').val();
   var passB = $('input[name=newPassword2]').val();
 
