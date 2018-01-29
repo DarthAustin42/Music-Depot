@@ -22,6 +22,9 @@
 		if(!$foundUser) {
 			echo "There is no user with that information";
 		}
+		else {
+			"hi";
+		}
 
 		//echo $allUsers;
 		//$_SESSION['username'] = $_POST["username"];
