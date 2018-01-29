@@ -18,3 +18,12 @@ $(window).resize(function() {
 		$("#loginNavID").removeClass("navbar-toggler-right");
 	}
 });
+
+var modal = document.getElementById('signUpModal');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
