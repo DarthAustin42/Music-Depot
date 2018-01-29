@@ -25,12 +25,15 @@ $('#newPassword2').keyup(function(){
 
   if(passA === passB) {
   	$('#signUpButton').removeAttr('disabled');
+  	$('#signUpButton').disabled = false;
   }
   else {
   	$('#signUpButton').attr('disabled', 'disabled');
+  	$('#signUpButton').disabled = true;
   }
 });
 
 $(document).ready(function() {
 	$('#signUpButton').attr('disabled', 'disabled');
+	$('#signUpButton').disabled = true;
 })
