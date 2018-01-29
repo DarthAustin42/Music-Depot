@@ -4,6 +4,8 @@
 	// $USERNAME = $_POST["username"];
 	// $PASSWORD = $_POST["password"];
 
+	use .env
+
 	$result = DB::select("SELECT * FROM users");
 	foreach ($result as $user) {
 		echo $user->username . "<br>";
