@@ -32,7 +32,7 @@
 		    	</ul>
 		    	<ul class="navbar-nav navbar-toggler-right" id="loginNavID">
 		    		<li class="nav-item dropdown dropdown-pull-right">
-				       	<a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" onclick="checkLogin()" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				       	<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" onclick="checkLogin()" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				       		<?php
 								if(isset($_SESSION["username"])) {
 							    	echo $_SESSION["username"];
@@ -57,37 +57,18 @@
 			                			<center><p>Or</p></center>
 		                			</div>
 		                			<div class="form-group">
-			                			<a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink2" onclick="checkLogin()" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								       		<?php
-												if(isset($_SESSION["username"])) {
-											    	echo $_SESSION["username"];
-											    } else {
-											    	echo "Login/Sign Up";
-											    }
-											?>
-								       	</a>
-								        <div id="toLogin" class="dropdown-menu loginOuterContainer" aria-labelledby="navbarDropdownMenuLink2">
-								        	<div class="loginContainer">
-							              		<form action="addUser.php" method="post">
-							              			<div class="form-group">
-							                			<input name="username" id="username" name="username" class="form-control" type="text" placeholder="Username"> 
-							                		</div>
-							                		<div class="form-group">
-							                			<input name="password" id="password" name="password" class="form-control" type="password" placeholder="Password">
-							                		</div>
-							                		<div class="form-group">
-							                			<input type="submit" class="form-control" value="Login"><br>
-							                		</div>
-							                		<div class="form-group">
-							                			<center><p>Or</p></center>
-						                			</div>
-						                			<div class="form-group">
-							                			
-						                			</div>
-						                			
-							              		</form>
-							              	</div>
-								        </div>
+			                			<div class="dropdown-submenu">
+			                				<a href="#">Sign Up<span class="caret"></span></a>
+			                				<div class="form-group">
+					                			<input name="username" id="username" name="username" class="form-control" type="text" placeholder="Username"> 
+					                		</div>
+					                		<div class="form-group">
+					                			<input name="password" id="password" name="password" class="form-control" type="password" placeholder="Password">
+					                		</div>
+					                		<div class="form-group">
+					                			<input type="submit" class="form-control" value="Login"><br>
+					                		</div>
+			                			</div>
 		                			</div>
 		                			
 			              		</form>
