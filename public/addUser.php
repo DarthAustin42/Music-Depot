@@ -48,6 +48,8 @@
 		}
 
 		mysqli_close($conn);
+	} else {
+		header("LOCATION: /");
 	}
 	return;
 ?>
