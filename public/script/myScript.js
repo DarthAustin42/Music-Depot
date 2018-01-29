@@ -23,6 +23,7 @@ $('#newPassword2').keyup(function(){
   var passA = $('input[name=newPassword]').val();
   var passB = $('input[name=newPassword2]').val();
 
+  console.log(passA + "     ::     " + passB);
   if(passA === passB) {
   	$('#signUpButton').removeAttr('disabled');
   }
