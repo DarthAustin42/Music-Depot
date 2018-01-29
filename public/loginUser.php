@@ -4,6 +4,8 @@
 	// $USERNAME = $_POST["username"];
 	// $PASSWORD = $_POST["password"];
 
+	use App\Http\Controllers\DB;
+	
 	$result = app('db')->select("SELECT * FROM users");
 	foreach ($result as $user) {
 		echo $user->username;
