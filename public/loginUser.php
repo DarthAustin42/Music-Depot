@@ -1,9 +1,8 @@
 <?php
 	
 	session_start();
-	$USERNAME = $_POST["newUsername"];
-	$PASSWORD = $_POST["newPassword"];
-	$PASSWORD2 = $_POST["newPassword2"];
+	$USERNAME = $_POST["username"];
+	$PASSWORD = $_POST["password"];
 
 
 	$servername = "localhost";
@@ -23,21 +22,16 @@
 	if ($allUsers = mysqli_query($conn, $sql)) {
 		$foundUser = false;
 		while($row = mysqli_fetch_array($allUsers)) {
-			if($row['username'] === $USERNAME) {
-				$foundUser = true;
+			if($row['username'] === $USERNAME && $row['password'] === $PASSWORD) {
+				$_SESSION["username"] = $_POST["username"];
+				header("LOCATION: /");
 				// echo "Hello there, " . $_SESSION['username'];
+				// $foundUser = true;
 				break;
 			}
 		}
 		if(!$foundUser) {
-			$sql = "INSERT INTO users VALUES ('$USERNAME', '$PASSWORD')";
-			mysqli_query($conn, $sql);
-			$_POST['username'] = $USERNAME;
-			$_POST['password'] = $PASSWORD;
-			include 'loginUser.php';
-		}
-		else {
-			header("LOCATION: /");
+			echo "There is no user with that information";
 		}
 
 		mysqli_free_result($allUsers);
