@@ -12,6 +12,10 @@ function checkLogin() {
 	}
 }
 
+function doSomething() {
+	console.log("hi");
+}
+
 $(window).resize(function() {
 	var viewportWidth = $(window).width();
 	if (viewportWidth <= 992) {
