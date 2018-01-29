@@ -12,9 +12,13 @@ function checkLogin() {
 	}
 }
 
-function doSomething() {
-	console.log("hi");
-}
+$('#newPassword, #newPassword2').on('keyup', function() {
+	if($('#newPassword').val() == $('#newPassword2').val()) {
+		$('#message').html('Matching').css('color', 'green');
+	} else {
+		$('#message').html('Not Matching').css('color', 'red');
+	}
+})
 
 $(window).resize(function() {
 	var viewportWidth = $(window).width();
@@ -22,6 +26,8 @@ $(window).resize(function() {
 		$("#loginNavID").removeClass("navbar-toggler-right");
 	}
 });
+
+
 
 function checkPass() {
   var passA = $('input[name=newPassword]').val();
