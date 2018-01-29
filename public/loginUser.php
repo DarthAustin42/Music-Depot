@@ -4,12 +4,7 @@
 	// $USERNAME = $_POST["username"];
 	// $PASSWORD = $_POST["password"];
 
-	use .env
-
-	$result = DB::select("SELECT * FROM users");
-	foreach ($result as $user) {
-		echo $user->username . "<br>";
-	}
+	Route::get('', 'UserController@grabUsers');
 
 	// $sql = "SELECT * FROM users";
 	// if ($result = app('db')->select($sql)) {
