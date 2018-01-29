@@ -57,34 +57,23 @@
 			                			<center><p>Or</p></center>
 		                			</div>
 		                			<div class="form-group">
-			                			<center><button onclick="document.getElementById('signUpModal').style.display='block'" style="width:auto;">Login</button></center>
-			                			<div id="signUpModal" class="modal">
-										  
-										  <form class="modal-content animate" action="/action_page.php">
-										    <div class="imgcontainer">
-										      <span onclick="document.getElementById('signUpModal').style.display='none'" class="close" title="Close Modal">&times;</span>
-										      <img src="img_avatar2.png" alt="Avatar" class="avatar">
-										    </div>
-
-										    <div class="container">
-										      <label><b>Username</b></label>
-										      <input type="text" placeholder="Enter Username" name="uname" required>
-
-										      <label><b>Password</b></label>
-										      <input type="password" placeholder="Enter Password" name="psw" required>
-										        
-										      <button type="submit">Login</button>
-										      <label>
-										        <input type="checkbox" checked="checked"> Remember me
-										      </label>
-										    </div>
-
-										    <div class="container" style="background-color:#f1f1f1">
-										      <button type="button" onclick="document.getElementById('signUpModal').style.display='none'" class="cancelbtn">Cancel</button>
-										      <span class="psw">Forgot <a href="#">password?</a></span>
-										    </div>
-										  </form>
-										</div>
+			                			<center><button data-toggle="modal" data-target="#signUpModal">Sign Up</button></center>
+			                			<div class="modal fade" id="signUpModal" role="dialog">
+			                				<div class="modal-dialog">
+			                					<div class="modal-content">
+			                						<div class="modal-header">
+			                							<button type="button" class="close" data-dismiss="modal">&times;</button>
+			                							<h4 class="modal-title">Sign Up</h4>
+			                						</div>
+			                						<div class="modal-body">
+			                							<p>Test</p>
+			                						</div>
+			                						<div class="modal-footer">
+			                							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			                						</div>
+			                					</div>
+			                				</div>
+			                			</div>
 		                			</div>
 			              		</form>
 			              	</div>
