@@ -1,39 +1,47 @@
 <?php
 	
-	// session_start();
-	// $USERNAME = $_POST["username"];
-	// $PASSWORD = $_POST["password"];
+	session_start();
+	$USERNAME = $_POST["username"];
+	$PASSWORD = $_POST["password"];
 
-	Route::get('', 'UserController@grabUsers');
 
-	// $sql = "SELECT * FROM users";
-	// if ($result = app('db')->select($sql)) {
-	// 	$foundUser = false;
-	// 	while($result as $row) {
-	// 		$theUs = $row->username;
-	// 		$thePass = $row->password;
-	// 		echo $theUs . "  ::  " . $thePass;
-	// 		if($theUs === $USERNAME && $thePass === $PASSWORD) {
-	// 			$_SESSION["username"] = $_POST["username"];
-	// 			header("LOCATION: /");
-	// 			// echo "Hello there, " . $_SESSION['username'];
-	// 			// $foundUser = true;
-	// 			break;
-	// 		}
-	// 	}
-	// 	if(!$foundUser) {
-	// 		echo "There is no user with that information";
-	// 	}
-	// 	else {
-	// 		"hi";
-	// 	}
+	$servername = "localhost";
+	$username = "anielsen";
+	$password = "VikingS42";
+	$dbname = 'testDB';
+	// Create connection
+	$conn = new mysqli($servername, $username, $password, $dbname);
+	// Check connection
+	if ($conn->connect_error) {
+	    die("Connection failed: " . $conn->connect_error);
+	} 
 
-	// 	//echo $allUsers;
-	// 	//$_SESSION['username'] = $_POST["username"];
-	// 	//header("LOCATION: /index.php");
-	// } else {
-	//     echo "ERROR: Could not able to execute $sql. ";
-	//}
+	// Create database
+	//$sql = "INSERT INTO users VALUES ('$USERNAME', '$PASSWORD')";
+	$sql = "SELECT * FROM users";
+	if ($allUsers = mysqli_query($conn, $sql)) {
+		$foundUser = false;
+		while($row = mysqli_fetch_array($allUsers)) {
+			if($row['username'] === $USERNAME && $row['password'] === $PASSWORD) {
+				$_SESSION["username"] = $_POST["username"];
+				header("LOCATION: /");
+				// echo "Hello there, " . $_SESSION['username'];
+				// $foundUser = true;
+				break;
+			}
+		}
+		if(!$foundUser) {
+			echo "There is no user with that information";
+		}
 
-	//return;
+		mysqli_free_result($allUsers);
+		//echo $allUsers;
+		//$_SESSION['username'] = $_POST["username"];
+		//header("LOCATION: /index.php");
+	} else {
+	    echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
+	}
+
+	mysqli_close($conn);
+	return;
 ?>
