@@ -102,7 +102,8 @@
 		<h1 class="text-center">Hello World!!</h1>
 		<h2>
 			<?php
-				$result = app('db')->select("SELECT * FROM users");
+
+				$result = DB::select("SELECT * FROM users");
 				foreach ($result as $user) {
 					echo $user->username;
 				}
