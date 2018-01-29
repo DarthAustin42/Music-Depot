@@ -20,8 +20,17 @@ $(window).resize(function() {
 });
 
 $('#newPassword2').keyup(function(){
-  var lengthA = $('input[name=newPassword]').val();
-  var lengthB = $('input[name=newPassword2]').val();
+  var passA = $('input[name=newPassword]').val();
+  var passB = $('input[name=newPassword2]').val();
 
-  $('#signUpButton').prop('disabled', lengthA === lengthB);
+  if(passA === passB) {
+  	$('#signUpButton').removeAttr('disabled');
+  }
+  else {
+  	$('#signUpButton').attr('disabled', 'disabled');
+  }
 });
+
+$(document).ready(function() {
+	$('#signUpButton').attr('disabled', 'disabled');
+})
