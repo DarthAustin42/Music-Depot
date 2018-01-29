@@ -1,8 +1,8 @@
 <?php
 	
-	session_start();
-	$USERNAME = $_POST["username"];
-	$PASSWORD = $_POST["password"];
+	// session_start();
+	// $USERNAME = $_POST["username"];
+	// $PASSWORD = $_POST["password"];
 
 	$result = app('db')->select("SELECT * FROM users");
 	foreach ($result as $user) {
@@ -38,5 +38,5 @@
 	//     echo "ERROR: Could not able to execute $sql. ";
 	//}
 
-	return;
+	//return;
 ?>
