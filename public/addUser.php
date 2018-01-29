@@ -3,8 +3,6 @@
 	session_start();
 	$USERNAME = $_POST["newUsername"];
 	$PASSWORD = $_POST["newPassword"];
-	$PASSWORD2 = $_POST["newPassword2"];
-
 
 	$servername = "localhost";
 	$username = "anielsen";
@@ -30,16 +28,11 @@
 			}
 		}
 		if(!$foundUser) {
-			if($PASSWORD === $PASSWORD2) {
-				$sql = "INSERT INTO users VALUES ('$USERNAME', '$PASSWORD')";
-				mysqli_query($conn, $sql);
-				$_POST['username'] = $USERNAME;
-				$_POST['password'] = $PASSWORD;
-				include 'loginUser.php';
-			}
-			else {
-				header("LOCATION: /");
-			}
+			$sql = "INSERT INTO users VALUES ('$USERNAME', '$PASSWORD')";
+			mysqli_query($conn, $sql);
+			$_POST['username'] = $USERNAME;
+			$_POST['password'] = $PASSWORD;
+			include 'loginUser.php';
 		}
 		else {
 			header("LOCATION: /");
