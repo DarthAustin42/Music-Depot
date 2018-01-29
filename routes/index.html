@@ -105,7 +105,7 @@
 
 				$result = DB::select("SELECT * FROM users");
 				foreach ($result as $user) {
-					echo $user->username;
+					echo $user->username . "<br>";
 				}
 			?>
 		</h2>
