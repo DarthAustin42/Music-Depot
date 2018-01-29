@@ -27,10 +27,10 @@ $('#newPassword2').keyup(function(){
   	$('#signUpButton').removeAttr('disabled');
   }
   else {
-  	$('#signUpButton').attr('disabled', 'disabled');
+  	$('#signUpButton').attr('disabled', true);
   }
 });
 
 $(document).ready(function() {
-	$('#signUpButton').attr('disabled', 'disabled');
+	$('#signUpButton').attr('disabled', true);
 })
