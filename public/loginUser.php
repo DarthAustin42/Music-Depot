@@ -8,7 +8,10 @@
 	if ($result = app('db')->select($sql)) {
 		$foundUser = false;
 		while($result as $row) {
-			if($row->username === $USERNAME && $row->password === $PASSWORD) {
+			$theUs = $row->username;
+			$thePass = $row->password;
+			echo $theUs . "  ::  " . $thePass;
+			if($theUs === $USERNAME && $thePass === $PASSWORD) {
 				$_SESSION["username"] = $_POST["username"];
 				header("LOCATION: /");
 				// echo "Hello there, " . $_SESSION['username'];
