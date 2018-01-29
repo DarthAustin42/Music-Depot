@@ -24,13 +24,13 @@ $('#newPassword2').keyup(function(){
   var passB = $('input[name=newPassword2]').val();
 
   if(passA === passB) {
-  	$('#signUpButton').removeAttr('disabled');
+  	$('#signUpButton').removeProp('disabled');
   }
   else {
-  	$('#signUpButton').attr('disabled', true);
+  	$('#signUpButton').prop('disabled', true);
   }
 });
 
 $(document).ready(function() {
-	$('#signUpButton').attr('disabled', true);
+	$('#signUpButton').prop('disabled', true);
 })
