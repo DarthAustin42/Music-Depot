@@ -103,7 +103,7 @@
 		<h2>
 			<?php
 				$result = app('db')->select("SELECT * FROM users");
-				foreach ($users as $user) {
+				foreach ($result as $user) {
 					echo $user->username;
 				}
 			?>
