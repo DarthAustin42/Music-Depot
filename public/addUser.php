@@ -30,11 +30,16 @@
 			}
 		}
 		if(!$foundUser) {
-			$sql = "INSERT INTO users VALUES ('$USERNAME', '$PASSWORD')";
-			mysqli_query($conn, $sql);
-			$_POST['username'] = $USERNAME;
-			$_POST['password'] = $PASSWORD;
-			include 'loginUser.php';
+			if($PASSWORD === $PASSWORD2) {
+				$sql = "INSERT INTO users VALUES ('$USERNAME', '$PASSWORD')";
+				mysqli_query($conn, $sql);
+				$_POST['username'] = $USERNAME;
+				$_POST['password'] = $PASSWORD;
+				include 'loginUser.php';
+			}
+			else {
+				header("LOCATION: /");
+			}
 		}
 		else {
 			header("LOCATION: /");
