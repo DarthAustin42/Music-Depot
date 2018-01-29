@@ -18,3 +18,10 @@ $(window).resize(function() {
 		$("#loginNavID").removeClass("navbar-toggler-right");
 	}
 });
+
+$('#newPassword2').keyup(function(){
+  var lengthA = $('input[name=newPassword]').val();
+  var lengthB = $('input[name=newPassword2]').val();
+
+  $('#signUpButton').prop('disabled', lengthA === lengthB);
+});
