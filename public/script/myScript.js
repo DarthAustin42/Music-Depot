@@ -19,7 +19,8 @@ $(window).resize(function() {
 	}
 });
 
-$('#newPassword2').keyup(function(){
+$("body").on('keyup', '#newPassword2', checkPass());
+checkPass() {
   var passA = $('input[name=newPassword]').val();
   var passB = $('input[name=newPassword2]').val();
 
@@ -30,7 +31,7 @@ $('#newPassword2').keyup(function(){
   else {
   	$('#signUpButton').attr('disabled', true);
   }
-});
+};
 
 $(document).ready(function() {
 	console.log("hi");
